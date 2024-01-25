@@ -1,4 +1,24 @@
-2024/01/25-08:49:25.868 3d24 Reusing MANIFEST D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/01/25-08:49:25.868 3d24 Recovering log #31
-2024/01/25-08:49:25.878 3d24 Reusing old log D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000031.log 
-2024/01/25-08:49:26.583 57ac Manual compaction at level-0 from '\x00\x13\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x14\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/01/26-00:33:09.127 5020 Reusing MANIFEST D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/26-00:33:09.127 5020 Recovering log #149
+2024/01/26-00:33:09.147 5020 Reusing old log D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000149.log 
+2024/01/26-00:33:20.840 1438 Level-0 table #154: started
+2024/01/26-00:33:20.843 1438 Level-0 table #154: 76239 bytes OK
+2024/01/26-00:33:20.844 1438 Delete type=0 #149
+2024/01/26-00:33:20.844 6dd4 Manual compaction at level-0 from '\x00I\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00J\x00\x00\x00' @ 0 : 0; will stop at '\x00J\x00\x00\x05' @ 75959 : 1
+2024/01/26-00:33:20.844 6dd4 Compacting 1@0 + 1@1 files
+2024/01/26-00:33:20.882 6dd4 Generated table #155@0: 28450 keys, 489373 bytes
+2024/01/26-00:33:20.882 6dd4 Compacted 1@0 + 1@1 files => 489373 bytes
+2024/01/26-00:33:20.882 6dd4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/01/26-00:33:20.883 6dd4 Delete type=2 #154
+2024/01/26-00:33:20.883 6dd4 Manual compaction at level-0 from '\x00J\x00\x00\x05' @ 75959 : 1 .. '\x00J\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/01/26-00:33:20.891 5b94 Level-0 table #157: started
+2024/01/26-00:33:20.902 5b94 Level-0 table #157: 466 bytes OK
+2024/01/26-00:33:20.903 5b94 Delete type=2 #151
+2024/01/26-00:33:20.903 5b94 Delete type=0 #153
+2024/01/26-00:33:20.903 5b94 Manual compaction at level-0 from '\x00J\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00K\x00\x00\x00' @ 0 : 0; will stop at '\x00J\x00\x00\x05' @ 75992 : 0
+2024/01/26-00:33:20.903 5b94 Compacting 1@0 + 1@1 files
+2024/01/26-00:33:20.939 5b94 Generated table #158@0: 28448 keys, 489365 bytes
+2024/01/26-00:33:20.939 5b94 Compacted 1@0 + 1@1 files => 489365 bytes
+2024/01/26-00:33:20.940 5b94 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/01/26-00:33:20.940 5b94 Delete type=2 #157
+2024/01/26-00:33:20.940 6e0 Manual compaction at level-0 from '\x00J\x00\x00\x05' @ 75992 : 0 .. '\x00K\x00\x00\x00' @ 0 : 0; will stop at (end)
