@@ -1,8 +1,31 @@
-[0125/084925.724:ERROR:dxva_video_decode_accelerator_win.cc(1426)] DXVAVDA fatal error: Could not load mf.dll: The specified module could not be found. (0x7E)
-[0125/084926.295:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
-[0125/084926.295:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.", source:  (0)
-[0125/084926.295:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'gamepad'.", source:  (0)
-[0125/084926.295:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'local-fonts'.", source:  (0)
-[0125/084926.295:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'window-management'.", source:  (0)
-[0125/084926.571:INFO:CONSOLE(215)] "Another connection wants to delete database 'wawc'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/serviceworker.js (215)
-[0125/084926.571:INFO:CONSOLE(215)] "Another connection wants to delete database 'wawc'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/serviceworker.js (215)
+[0126/001456.444:ERROR:dxva_video_decode_accelerator_win.cc(1426)] DXVAVDA fatal error: Could not load mf.dll: The specified module could not be found. (0x7E)
+[0126/001459.799:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
+[0126/001459.799:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.", source:  (0)
+[0126/001459.799:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'gamepad'.", source:  (0)
+[0126/001459.799:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'local-fonts'.", source:  (0)
+[0126/001459.799:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'window-management'.", source:  (0)
+[0126/001500.027:INFO:CONSOLE(215)] "Another connection wants to delete database 'wawc'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/serviceworker.js (215)
+[0126/001500.027:INFO:CONSOLE(215)] "Another connection wants to delete database 'wawc'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/serviceworker.js (215)
+[0126/001500.658:WARNING:backend_impl.cc(1826)] Destroying invalid entry.
+[0126/001643.079:ERROR:dxva_video_decode_accelerator_win.cc(1426)] DXVAVDA fatal error: Could not load mf.dll: The specified module could not be found. (0x7E)
+[0126/001643.087:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0126/001643.087:ERROR:cache_util.cc(146)] Unable to move cache folder D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\GPUCache to D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\old_GPUCache_000
+[0126/001643.087:ERROR:disk_cache.cc(192)] Unable to create cache
+[0126/001643.087:ERROR:shader_disk_cache.cc(612)] Shader Cache Creation failed: -2
+[0126/001645.110:ERROR:cache_util_win.cc(20)] Unable to move the cache: Access is denied. (0x5)
+[0126/001645.110:ERROR:cache_util.cc(146)] Unable to move cache folder D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\Cache\Cache_Data to D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\Cache\old_Cache_Data_000
+[0126/001645.110:ERROR:disk_cache.cc(192)] Unable to create cache
+[0126/001645.501:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
+[0126/001645.501:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.", source:  (0)
+[0126/001645.501:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'gamepad'.", source:  (0)
+[0126/001645.501:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'local-fonts'.", source:  (0)
+[0126/001645.501:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'window-management'.", source:  (0)
+[0126/001646.116:ERROR:service_worker_storage.cc(1904)] Failed to delete the database: Database IO error
+[0126/001652.710:ERROR:quota_database.cc(823)] Could not open the quota database, resetting.
+[0126/001655.474:ERROR:quota_database.cc(825)] Failed to reset the quota database.
+[0126/001657.490:ERROR:sandbox_origin_database.cc(190)] SandboxOriginDatabase failed at: Init@storage/browser/file_system/sandbox_origin_database.cc:94 with error: IO error: D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\File System\Origins/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+[0126/001657.490:WARNING:sandbox_origin_database.cc(106)] Attempting to repair SandboxOriginDatabase.
+[0126/001701.543:WARNING:sandbox_origin_database.cc(140)] Failed to repair SandboxOriginDatabase.
+[0126/001703.561:ERROR:sandbox_origin_database.cc(190)] SandboxOriginDatabase failed at: Init@storage/browser/file_system/sandbox_origin_database.cc:94 with error: IO error: D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\File System\Origins/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+[0126/001703.561:WARNING:sandbox_origin_database.cc(106)] Attempting to repair SandboxOriginDatabase.
+[0126/001707.617:WARNING:sandbox_origin_database.cc(140)] Failed to repair SandboxOriginDatabase.
