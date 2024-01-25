@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  No              String?        @db.VarChar(255)
+  nama_fakultas   String?        @db.VarChar(255)
+  nama_prodi      String?        @db.VarChar(255)
+  angkatan        String?        @db.VarChar(255)
+  nim             String         @id @db.VarChar(255)
+  nik_mahasiswa   String?        @db.VarChar(255)
+  nama            String?        @db.VarChar(255)
+  tempat_lahir    String?        @db.VarChar(255)
+  tanggal_lahir   String?        @db.VarChar(255)
+  hp_mahasiswa    String?        @db.VarChar(255)
+  lulus           String?        @db.VarChar(255)
+  nik_ayah        String?        @db.VarChar(255)
+  nama_ayah       String?        @db.VarChar(255)
+  pekerjaan_ayah  String?        @db.VarChar(255)
+  hp_ayah         String?        @db.VarChar(255)
+  nik_ibu         String?        @db.VarChar(255)
+  nama_ibu        String?        @db.VarChar(255)
+  pekerjaan_ibu   String?        @db.VarChar(255)
+  hp_ibu          String?        @db.VarChar(255)
+  provinsi        String?        @db.VarChar(255)
+  kabupaten_kota  String?        @db.VarChar(255)
+  kecamatan       String?        @db.VarChar(255)
+  kelurahan       String?        @db.VarChar(255)
+  provinsi1       String?        @db.VarChar(255)
+  kabupaten_kota1 String?        @db.VarChar(255)
+  kecamatan1      String?        @db.VarChar(255)
+  kelurahan1      String?        @db.VarChar(255)
+  terakhir_chat   DateTime?      @db.Timestamp(0)
+  status          Sheet2_status? @default(belum)
+  respon          Sheet2_respon?
+}
+
+enum Sheet2_status {
+  sukses
+  pending
+  gagal
+  belum
+}
+
+enum Sheet2_respon {
+  positf
+  negatif
+  netral
+}

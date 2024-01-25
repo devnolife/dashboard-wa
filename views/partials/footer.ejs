@@ -1,0 +1,58 @@
+<footer class="footer">
+  <div class="row align-items-center justify-content-xl-between">
+    <div class="col-xl-6">
+      <div class="copyright text-center text-xl-left text-muted">
+        &copy; 2024 
+        <a href="https://github/devnolife" class="font-weight-bold ml-1" target="_blank">devnolife</a>
+        &
+        <a href="https://github.com/arikalkhairat" class="font-weight-bold ml-1" target="_blank">ikaa ❤️</a>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+        <li class="nav-item">
+          <a href="https://wa.me/6287765285496" class="nav-link" target="_blank">Whatsapp</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://www.instagram.com/ellioscharofficial/?hl=id" class="nav-link" target="_blank">Intagram</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://s.id/ellioschar" class="nav-link" target="_blank">TELLI OSCHAR, M.Pd.I </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function addEvent(event, elem, func) {
+    if (elem.addEventListener) // W3C DOM
+      elem.addEventListener(event, func, false);
+    else if (elem.attachEvent) { // IE DOM
+      elem.attachEvent("on" + event, func);
+    } else { // No much to do
+      elem["on" + event] = func;
+    }
+  }
+
+  function redirectToLogin() {
+    if (this.status === 200) {
+      return window.location = this.responseURL || '/login';
+    }
+  }
+
+  function logout(event) {
+    if (!event.target.className.includes('logout')) {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.addEventListener("load", redirectToLogin);
+    xhr.open("POST", "/logout");
+    xhr.send();
+  }
+
+  var bodyElement = document.querySelector('body');
+  addEvent('click', bodyElement, logout);
+</script>
