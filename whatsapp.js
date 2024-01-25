@@ -1,6 +1,11 @@
 const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
-const
+const express = require('express')
+const server = express()
+const port = 3050;
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+
 const {
   phoneNumberFormatter,
   formatUmum
@@ -51,10 +56,5 @@ client.on('disconnected', (reason) => {
   client.initialize();
 });
 
-const KirimPesan = async (nohp, pesan) => {
-  try {
 
-  } catch (err) {
-    console.log(err);
-  }
-}
+

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-
 const getAllUsers = async () => {
   try {
     const users = await prisma.users.findMany({
@@ -42,8 +41,12 @@ router.get('/', async (req, res) => {
 router.get('/list-users', async (req, res) => {
   try {
     const users = await getAllUsers();
-    res.render('pages/list-users', { users });
-  } catch (e) { 
+    const totalUsers = users.length;
+    const usersPerPage = 10;
+    const totalPage = Math.ceil(totalUsers / usersPerPage);
+    const currentPage = 1;
+    res.render('pages/list-users', { users, totalPage, currentPage });
+  } catch (e) {
     console.error('Error fetching users:', error);
   }
 });
