@@ -47,6 +47,40 @@ const updateStatus = async (id, status) => {
   }
 }
 
+// const Bombers = async () => {
+//   try {
+//     const data = await prisma.data_mhs.findMany({
+//       where: {
+//         nama_fakultas: 'AGAMA ISLAM',
+//         status: 'belum'
+//       },
+//       select: {
+//         id: true,
+//         hp_mahasiswa: true,
+//       },
+//       take: 1000
+//     });
+
+//     await Promise.allSettled(data.map(async (item, index) => {
+//       try {
+//         console.log("Mengirim pesan ke " + item.hp_mahasiswa, 'urutan ' + index);
+//         const nomor = phoneNumberFormatter(item.hp_mahasiswa);
+//         const media = MessageMedia.fromFilePath('gambar1.jpg');
+//         await client.sendMessage(nomor, media, {
+//           caption: formatUmum()
+//         });
+//         console.log("Berhasil Mengirim Pesan");
+//         await updateStatus(item.id, 'sukses');
+//       } catch (error) {
+//         await updateStatus(item.id, 'gagal');
+//         console.log(error);
+//       }
+//     }));
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
 const Bombers = async () => {
   try {
     const data = await prisma.data_mhs.findMany({
@@ -58,10 +92,11 @@ const Bombers = async () => {
         id: true,
         hp_mahasiswa: true,
       },
-      take: 100
+      take: 1000
     });
 
-    await Promise.allSettled(data.map(async (item, index) => {
+    for (let index = 0; index < data.length; index++) {
+      const item = data[index];
       try {
         console.log("Mengirim pesan ke " + item.hp_mahasiswa, 'urutan ' + index);
         const nomor = phoneNumberFormatter(item.hp_mahasiswa);
@@ -75,7 +110,7 @@ const Bombers = async () => {
         await updateStatus(item.id, 'gagal');
         console.log(error);
       }
-    }));
+    }
   } catch (error) {
     console.log(error);
   }
@@ -83,16 +118,27 @@ const Bombers = async () => {
 
 const Test = async () => {
   try {
-    const number = phoneNumberFormatter('085171079687');
-    const media = MessageMedia.fromFilePath('gambar1.jpg');
-    await client.sendMessage(number, media, {
-      caption: formatUmum()
-    });
-    console.log('success');
+    const phones = ['085757562962', '085298129638', '082271409022'];
+
+    for (const phone of phones) {
+      const number = phoneNumberFormatter(phone);
+      const media = MessageMedia.fromFilePath('gambar1.jpg');
+
+      await client.sendMessage(number, media, {
+        caption: formatUmum()
+      });
+
+      console.log(`Successfully sent message to ${phone}`);
+
+      await new Promise(resolve => setTimeout(resolve, 30000));
+    }
+
+    console.log('All messages sent successfully');
   } catch (error) {
-    console.log('failed', error);
+    console.log('Failed to send messages', error);
   }
 }
+
 
 client.initialize();
 
@@ -126,7 +172,3 @@ client.on('ready', async () => {
     console.log(error);
   }
 });
-
-
-
-

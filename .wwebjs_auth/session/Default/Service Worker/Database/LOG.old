@@ -1,3 +1,2 @@
-2024/01/26-08:24:11.953 2860 Reusing MANIFEST D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\Service Worker\Database/MANIFEST-000001
-2024/01/26-08:24:11.954 2860 Recovering log #3
-2024/01/26-08:24:11.954 2860 Reusing old log D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\Service Worker\Database/000003.log 
+2024/01/26-20:59:47.439 dcbe Creating DB /home/mai/Documents/Git-Clone/k/dashboard-wa/.wwebjs_auth/session/Default/Service Worker/Database since it was missing.
+2024/01/26-20:59:47.446 dcbe Reusing MANIFEST /home/mai/Documents/Git-Clone/k/dashboard-wa/.wwebjs_auth/session/Default/Service Worker/Database/MANIFEST-000001
