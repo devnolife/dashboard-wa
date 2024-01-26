@@ -1,5 +1,5 @@
 const qrcode = require('qrcode-terminal');
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const express = require('express')
 const server = express()
 const port = 3050;
@@ -38,7 +38,8 @@ const updateStatus = async (id, status) => {
         id: id
       },
       data: {
-        status: status
+        status: status,
+        chat_terakhir: new Date(Date.now())
       }
     })
   } catch (error) {
@@ -57,26 +58,41 @@ const Bombers = async () => {
         id: true,
         hp_mahasiswa: true,
       },
-      take: 1000
-    })
-    data.map((item, index) => {
-      setTimeout(() => {
+      take: 100
+    });
+
+    await Promise.allSettled(data.map(async (item, index) => {
+      try {
+        console.log("Mengirim pesan ke " + item.hp_mahasiswa, 'urutan ' + index);
         const nomor = phoneNumberFormatter(item.hp_mahasiswa);
-        const message = formatUmum();
-        client.sendMessage(nomor, message)
-          .then(() => {
-            updateStatus(item.id, 'sudah');
-          }).catch(() => {
-            updateStatus(item.id, 'gagal');
-          })
-      }, index * 1000);
-    })
+        const media = MessageMedia.fromFilePath('gambar1.jpg');
+        await client.sendMessage(nomor, media, {
+          caption: formatUmum()
+        });
+        console.log("Berhasil Mengirim Pesan");
+        await updateStatus(item.id, 'sukses');
+      } catch (error) {
+        await updateStatus(item.id, 'gagal');
+        console.log(error);
+      }
+    }));
   } catch (error) {
     console.log(error);
   }
 }
 
-
+const Test = async () => {
+  try {
+    const number = phoneNumberFormatter('085171079687');
+    const media = MessageMedia.fromFilePath('gambar1.jpg');
+    await client.sendMessage(number, media, {
+      caption: formatUmum()
+    });
+    console.log('success');
+  } catch (error) {
+    console.log('failed', error);
+  }
+}
 
 client.initialize();
 
@@ -101,21 +117,16 @@ client.on('disconnected', (reason) => {
   client.initialize();
 });
 
-client.on('ready', () => {
+client.on('ready', async () => {
   try {
-    const number = phoneNumberFormatter('085171079687');
-    const message = formatUmum();
-    client.sendMessage(number, message)
-      .then(() => {
-        console.log('success');
-      }).catch((error) => {
-        console.log(error);
-        console.log('error');
-      })
+    console.log('ready', 'Whatsapp is ready!');
+    await Bombers();
+    // await Test();
   } catch (error) {
     console.log(error);
   }
 });
+
 
 
 
