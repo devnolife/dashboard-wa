@@ -1,3 +1,2 @@
-2024/01/26-08:24:13.416 4558 Reusing MANIFEST D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\File System\Origins/MANIFEST-000001
-2024/01/26-08:24:13.417 4558 Recovering log #3
-2024/01/26-08:24:13.417 4558 Reusing old log D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\File System\Origins/000003.log 
+2024/01/26-20:59:47.619 dcde Creating DB /home/mai/Documents/Git-Clone/k/dashboard-wa/.wwebjs_auth/session/Default/File System/Origins since it was missing.
+2024/01/26-20:59:47.627 dcde Reusing MANIFEST /home/mai/Documents/Git-Clone/k/dashboard-wa/.wwebjs_auth/session/Default/File System/Origins/MANIFEST-000001

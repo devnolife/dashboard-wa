@@ -35,7 +35,7 @@ model data_mhs {
   kabupaten_kota_ String?          @db.VarChar(255)
   kecamatan_      String?          @db.VarChar(255)
   kelurahan_      String?          @db.VarChar(255)
-  id              Int              @id @unique @default(autoincrement()) @db.UnsignedInt
+  id              Int              @id @default(autoincrement()) @db.UnsignedInt
   chat_terakhir   DateTime?        @db.Timestamp(0)
   status          data_mhs_status? @default(belum)
   respon          data_mhs_respon?
