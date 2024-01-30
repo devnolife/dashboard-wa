@@ -1,8 +1,6 @@
 const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const express = require('express')
-const server = express()
-const port = 3050;
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
@@ -51,14 +49,18 @@ const Bombers = async () => {
   try {
     const data = await prisma.data_mhs.findMany({
       where: {
-        nama_fakultas: 'AGAMA ISLAM',
+        nama_fakultas: {
+          not: {
+            contains: 'TEKNIK'
+          }
+        },
         status: 'belum'
       },
       select: {
         id: true,
         hp_mahasiswa: true,
       },
-      take: 100
+      take: 2000
     });
 
     await Promise.allSettled(data.map(async (item, index) => {
@@ -68,12 +70,15 @@ const Bombers = async () => {
         const media = MessageMedia.fromFilePath('gambar1.jpg');
         await client.sendMessage(nomor, media, {
           caption: formatUmum()
+        }).then(async () => {
+          console.log("Berhasil Mengirim Pesan");
+          await updateStatus(item.id, 'sukses');
+        }).catch(async () => {
+          console.log("Gagal Mengirim Pesan");
+          await updateStatus(item.id, 'gagal');
         });
-        console.log("Berhasil Mengirim Pesan");
-        await updateStatus(item.id, 'sukses');
       } catch (error) {
         await updateStatus(item.id, 'gagal');
-        console.log(error);
       }
     }));
   } catch (error) {
@@ -121,7 +126,6 @@ client.on('ready', async () => {
   try {
     console.log('ready', 'Whatsapp is ready!');
     await Bombers();
-    // await Test();
   } catch (error) {
     console.log(error);
   }

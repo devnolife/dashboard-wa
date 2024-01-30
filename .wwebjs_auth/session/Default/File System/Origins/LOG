@@ -1,3 +1,2 @@
-2024/01/26-08:24:54.885 6ec Reusing MANIFEST D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\File System\Origins/MANIFEST-000001
-2024/01/26-08:24:54.885 6ec Recovering log #3
-2024/01/26-08:24:54.885 6ec Reusing old log D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\File System\Origins/000003.log 
+2024/01/30-20:29:16.511 33c4 Creating DB D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\File System\Origins since it was missing.
+2024/01/30-20:29:16.514 33c4 Reusing MANIFEST D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\File System\Origins/MANIFEST-000001

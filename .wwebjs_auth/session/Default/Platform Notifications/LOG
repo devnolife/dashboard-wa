@@ -1,3 +1,2 @@
-2024/01/26-08:24:54.231 6ec Reusing MANIFEST D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\Platform Notifications/MANIFEST-000001
-2024/01/26-08:24:54.231 6ec Recovering log #3
-2024/01/26-08:24:54.231 6ec Reusing old log D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\Platform Notifications/000003.log 
+2024/01/30-20:29:40.470 2878 Creating DB D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\Platform Notifications since it was missing.
+2024/01/30-20:29:40.482 2878 Reusing MANIFEST D:\devnolife\devnolife-dashboardWA\.wwebjs_auth\session\Default\Platform Notifications/MANIFEST-000001
