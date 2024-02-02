@@ -45,6 +45,20 @@ const updateStatus = async (id, status) => {
   }
 }
 
+const Test = async () => {
+  try {
+    const nomor = phoneNumberFormatter('085171079687');
+    const media = MessageMedia.fromFilePath('gambar1.jpg');
+    await client.sendMessage(nomor, media, {
+      caption: formatBaru()
+    });
+    console.log('Berhasil Mengirim Pesan');
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 const Bombers = async () => {
   try {
     const data = await prisma.data_mhs.findMany({
@@ -112,7 +126,7 @@ client.on('disconnected', (reason) => {
 client.on('ready', async () => {
   try {
     console.log('ready', 'Whatsapp is ready!');
-    await Bombers();
+    await Test();
   } catch (error) {
     console.log(error);
   }

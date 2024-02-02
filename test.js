@@ -12,7 +12,7 @@ const prisma = new PrismaClient();
       },
       respon: 'negatif'
     },
-    take: 2230, // Limit the number of records
+    take: 1000, // Limit the number of records
     select: {
       id: true // Only select the id field
     }
