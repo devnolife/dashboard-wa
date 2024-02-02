@@ -21,7 +21,7 @@ const getAllUsers = async () => {
 
 const dataDashBoard = async () => {
   try {
-    const data = await prisma.users.groupBy({
+    const data = await prisma.data_mhs.groupBy({
       by: ['status'],
       _count: {
         status: true

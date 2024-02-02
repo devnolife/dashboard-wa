@@ -1,12 +1,12 @@
 const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
-const express = require('express')
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const {
   phoneNumberFormatter,
-  formatUmum
+  formatUmum,
+  formatBaru
 } = require('./utils');
 
 
@@ -63,39 +63,26 @@ const Bombers = async () => {
       take: 2000
     });
 
-    await Promise.allSettled(data.map(async (item, index) => {
+
+    for (const [index, item] of data.entries()) {
       try {
-        console.log("Mengirim pesan ke " + item.hp_mahasiswa, 'urutan ' + index);
+        console.log(`Mengirim pesan ke ${item.hp_mahasiswa}, urutan ${index}`);
         const nomor = phoneNumberFormatter(item.hp_mahasiswa);
         const media = MessageMedia.fromFilePath('gambar1.jpg');
         await client.sendMessage(nomor, media, {
-          caption: formatUmum()
-        }).then(async () => {
-          console.log("Berhasil Mengirim Pesan");
-          await updateStatus(item.id, 'sukses');
-        }).catch(async () => {
-          console.log("Gagal Mengirim Pesan");
-          await updateStatus(item.id, 'gagal');
+          caption: formatBaru()
         });
+        console.log('Berhasil Mengirim Pesan');
+        await updateStatus(item.id, 'sukses');
+        await new Promise(resolve => setTimeout(resolve, 30000));
       } catch (error) {
         await updateStatus(item.id, 'gagal');
+        console.log(error);
       }
-    }));
+    }
+    console.log('Semua pesan terkirim dengan sukses');
   } catch (error) {
     console.log(error);
-  }
-}
-
-const Test = async () => {
-  try {
-    const number = phoneNumberFormatter('085171079687');
-    const media = MessageMedia.fromFilePath('gambar1.jpg');
-    await client.sendMessage(number, media, {
-      caption: formatUmum()
-    });
-    console.log('success');
-  } catch (error) {
-    console.log('failed', error);
   }
 }
 

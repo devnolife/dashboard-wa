@@ -2,21 +2,32 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 (async () => {
-  const data = await prisma.data_mhs.findMany({
+  // Fetch the first 1000 records that match the condition
+  const records = await prisma.data_mhs.findMany({
     where: {
-      status: 'belum',
       nama_fakultas: {
         not: {
           contains: 'TEKNIK'
         }
+      },
+      respon: 'negatif'
+    },
+    take: 2230, // Limit the number of records
+    select: {
+      id: true // Only select the id field
+    }
+  });
+
+  const ids = records.map(record => record.id);
+
+  await prisma.data_mhs.updateMany({
+    where: {
+      id: {
+        in: ids // Use the in operator
       }
     },
-    select: {
-      id: true,
-      hp_mahasiswa: true,
-    },
-    take: 2000
-  })
-  console.log(data);
-  // Bombers();
+    data: {
+      respon: 'positif'
+    }
+  });
 })();
